@@ -1,0 +1,14 @@
+{
+  "name": "quickdash",
+  "version": "1.0.0",
+  "description": "A versatile dashboard application to provide users with essential information and task management in one place.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
