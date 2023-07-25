@@ -1,13 +1,11 @@
-<div class="row">
-    <!-- Login View Content -->
-    <h2>Login</h2>
-    <form id="login-form" action="/api/login" method="POST">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-
-        <button type="submit">Log In</button>
+<div id="login-view">
+    <h2 id="form-title">Login</h2>
+    <form id="auth-form" action="/login" method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password">
+        <!-- Additional Registration Fields -->
+        <input type="text" id="registration-field" name="name" placeholder="Name" required>
+        <button type="submit">Login</button>
     </form>
+    <p id="toggle-text">Don't have an account? <a id="toggle-button">Register</a></p>
 </div>
