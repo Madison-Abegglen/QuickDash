@@ -1,12 +1,12 @@
 // Load View Content from File & Insert Into Specified Element
 async function loadViewContent(viewId, viewFile) {
     try {
-        const response = await fetch('public/js/views/${viewFile}');
+        const response = await fetch(`public/js/views/${viewFile}`);
         const viewContent = await response.text();
         const appDiv = document.getElementById(viewId);
         appDiv.innerHTML = viewContent;
     } catch (error) {
-        console.error("Error Loading View: ", error);
+        console.error("Error Loading View Content: ", error);
     }
 }
 
