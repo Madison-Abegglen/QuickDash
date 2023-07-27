@@ -1,7 +1,5 @@
-#home-view {
-    display: none;
-}
+@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Poppins:wght@200;300;400;600;700&family=Prata&display=swap');
 
-#registration-field {
-    display: none;
+body {
+    font-family: 'Poppins', sans-serif;
 }
