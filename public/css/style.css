@@ -21,3 +21,7 @@
 body {
     font-family: 'Quicksand', sans-serif;
 }
+
+.dropdown img {
+    width: 15px;
+}
