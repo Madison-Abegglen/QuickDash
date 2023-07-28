@@ -26,12 +26,4 @@ router.get('/home', (req, res) => {
   res.render('home', { locals });
 })
 
-router.get('/profile', (req, res) => {
-  const locals = {
-    title: "QuickDash | Profile",
-    description: "A versatile dashboard application to provide users with essential information and task management in one place."
-  }
-  res.render('profile', { locals });
-})
-
 module.exports = router;
