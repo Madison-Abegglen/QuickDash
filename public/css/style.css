@@ -1,5 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Poppins:wght@200;300;400;600;700&family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Poppins:wght@200;300;400;600;700&family=Prata&family=Quicksand:wght@300;400;600;700&display=swap');
+
+:root {
+    --black: #1c1c1c;
+    --gray: #7e7e7e;
+    --gray-light: #e4e4e4;
+    --purple: #592E57;
+    --purple-light: #A298BC;
+    --pink: #F6E0E8;
+    --green: #30574E;
+    --green-light: #91ABA5;
+    --sea-green: #69E0EA;
+    --sea-green-light: #A9EFF7;
+    --teal: #074151;
+    --teal-light: #97BCC8;
+    --blue: #84ABDC;
+    --blue-light: #AFCEEB;
+    --tan: #FEE6C4;
+}
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
