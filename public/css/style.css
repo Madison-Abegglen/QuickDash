@@ -22,6 +22,10 @@ body {
     font-family: 'Quicksand', sans-serif;
     font-size: var(--font-size-base);
     background-image: url("/images/Candy_Cotton_BG.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: 0;
 }
 
@@ -29,7 +33,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 select,
-textarea {
+textarea{
     font-family: 'Quicksand', sans-serif;
     font-size: var(--font-size-base);
     display: flex;
@@ -39,14 +43,58 @@ textarea {
     margin-bottom: 1rem;
 }
 
-.btn {
+.login-body {
     background-color: white;
-    border: var(--purple);
-    border-width: 1px;
+}
+
+.btn {
+    font-family: 'Quicksand', sans-serif;
+    font-size: var(--font-size-base);
+    padding: .5rem 2.5rem .5rem 2.5rem;
+    background-color: white;
+    border: 1px solid var(--purple);
     border-radius: 50px;
+    color: var(--purple);
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--purple-light);
+}
+
+a {
+    text-decoration: none;
     color: var(--purple);
 }
 
+/* ===== HEADER ===== */
+.header {
+    display: grid;
+    align-items: center;
+    background-color: white;
+    border-bottom: 1px solid var(--purple);
+}
+
+.dropdown {
+    height: 20px;
+    width: 30px;
+    background-color: white;
+    border: 1px solid var(--purple);
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.dropdown:hover {
+    background-color: var(--purple-light);
+}
+
 .dropdown img {
+    height: 15px;
     width: 15px;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+    margin: 0 auto;
+    padding: 0 auto;
 }
