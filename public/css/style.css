@@ -69,10 +69,36 @@ a {
 
 /* ===== HEADER ===== */
 .header {
+    height: 10vh;
     display: grid;
     align-items: center;
     background-color: white;
     border-bottom: 1px solid var(--purple);
+    grid-template-columns: 0fr 0fr;
+    grid-template-rows: auto;
+    padding-top: 10px;
+    grid-template-areas: 
+    "logo brand"
+    ;
+}
+
+.header__logo {
+    grid-area: logo;
+    height: 60px;
+}
+
+.header__brand {
+    grid-area: brand;
+    font-weight: 600;
+    font-size: 24px;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__button {
+    grid-area: dropdown;
+    padding: 10px;
 }
 
 .dropdown {
