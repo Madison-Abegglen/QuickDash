@@ -150,9 +150,17 @@ a {
     margin: 0 !important;
 }
 
-@media only screen and (max-width: 996px) {
+@media only screen and (max-width: 996px) {    
     .login-title h1 {
         font-size: 46px;
+    }
+
+    .login-body {
+        grid-template-columns: 3fr !important;
+    }
+
+    .login-body h4 {
+        font-size: 28px !important;
     }
 }
 
@@ -168,7 +176,7 @@ a {
     display: grid;
     padding: 0 3rem 3rem 3rem;
     margin-top: 1rem;
-    grid-template-columns: 3fr 6fr;
+    grid-template-columns: 3fr 5fr;
     grid-template-rows: auto;
     grid-template-areas: 
     "subtitle"
@@ -179,6 +187,7 @@ a {
 
 .login-body h4 {
     grid-area: subtitle;
+    margin: 1rem 0 1rem 0;
     color: var(--purple);
     font-weight: 400;
     font-size: 36px;
