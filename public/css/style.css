@@ -16,6 +16,11 @@
     --blue: #84ABDC;
     --blue-light: #AFCEEB;
     --tan: #FEE6C4;
+
+    --font-size-base: 1rem;
+    --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+    --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+    --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 4.75rem);
 }
 
 body {
@@ -181,22 +186,8 @@ a {
 .login-title h1 {
     grid-area: title;
     font-weight: 400;
-    font-size: 105px;
+    font-size: var(--font-size-xl);
     margin: 0 !important;
-}
-
-@media only screen and (max-width: 996px) {    
-    .login-title h1 {
-        font-size: 46px;
-    }
-
-    .login-body {
-        grid-template-columns: 3fr !important;
-    }
-
-    .login-body h4 {
-        font-size: 28px !important;
-    }
 }
 
 .login-title h6 {
@@ -211,7 +202,7 @@ a {
     display: grid;
     padding: 3.5rem 3rem 3rem 3rem;
     margin-top: 1rem;
-    grid-template-columns: 3fr 5fr;
+    grid-template-columns: 3fr;
     grid-template-rows: auto;
     grid-template-areas: 
     "subtitle"
@@ -225,14 +216,14 @@ a {
     margin: 1rem 0 1rem 0;
     color: var(--purple);
     font-weight: 400;
-    font-size: 36px;
+    font-size: var(--font-size-lg);
 }
 
 .login-body p {
     grid-area: subparagraph;
     color: var(--purple);
     font-weight: 400;
-    font-size: 18px;
+    font-size: var(--font-size-base);
 }
 
 .btn {
