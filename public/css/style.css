@@ -18,6 +18,7 @@
     --tan: #FEE6C4;
 
     --font-size-base: 1rem;
+    --font-size-sm: clamp(1.13rem, calc(1.08rem + .22vw), 1.25rem);
     --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
     --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
     --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 4.75rem);
@@ -247,4 +248,119 @@ a {
 
 /* ===== HOME ===== */
 
-.home {}
+.home-heading {
+    display: grid;
+    padding: 0 3rem 0 3rem;
+    grid-template-columns: 1fr 2.5fr 2.5fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "1 greeting qotd 2"
+    "3 4 author 5"
+    "6 border border 7"
+    ;
+}
+
+.home-graphic {
+    grid-area: greeting;
+    width: 30rem;
+    margin: 2rem 0 0 0 !important;
+    align-self: flex-end;
+    justify-self: flex-start;
+}
+
+.qotd {
+    grid-area: qotd;
+    font-weight: 400;
+    font-size: var(--font-size-base);
+    align-self: flex-end;
+    justify-self: flex-end;
+}
+
+.qotd-author {
+    grid-area: author;
+    font-weight: 400;
+    font-size: var(--font-size-base);
+    margin: 0;
+    align-self: flex-start;
+    justify-self: flex-end;
+}
+
+.heading-bottom-border {
+    grid-area: border;
+    padding: .75rem 0 0 0;
+    border-bottom: 1px solid var(--purple);
+}
+
+.todo-group {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "1 todo-subtitle 2"
+    "3 todo-list 4"
+    ;
+}
+
+.todo-group h4 {
+    grid-area: todo-subtitle;
+    font-weight: 400;
+    font-size: var(--font-size-sm);
+}
+
+.todo-group ul {
+    grid-area: todo-list;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: var(--font-size-sm);
+}
+
+.todo-item {
+    font-weight: 400;
+    font-size: var(--font-size-base);
+    padding: .5rem 0 .5rem 0;
+    cursor: pointer;
+    transition: filter 0.1s;
+}
+
+.todo-item:not(:last-child) {
+    border-bottom: 1px solid var(--purple);
+}
+
+@media only screen and (max-width: 1148px) {
+    .home-heading {
+        grid-template-columns: 3fr;
+        grid-template-areas: 
+        "greeting"
+        "qotd"
+        "author"
+        "border"
+        ;
+    }
+
+    .home-graphic {
+        width: clamp(10rem, 100%, 30rem);
+        justify-self: center;
+    }
+
+    .qotd {
+        justify-self: center;
+    }
+
+    .qotd-author {
+        justify-self: center;
+    }
+
+    .todo-group {
+        padding: 0 3rem 0 3rem;
+        grid-template-columns: 3fr;
+        grid-template-areas: 
+        "todo-subtitle"
+        "todo-list"
+        ;
+    }
+
+    .todo-group h4 {
+        justify-self: flex-start;
+    }
+}
