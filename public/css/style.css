@@ -127,7 +127,7 @@ a {
 /* ===== FOOTER ===== */
 .footer {
     height: 10vh;
-    margin: 4rem 0 4rem 0;
+    margin: 1rem 0 4rem 0;
     display: grid;
     align-items: center;
     grid-template-columns: 3fr 1fr 3fr;
@@ -345,8 +345,9 @@ a {
     font-size: var(--font-size-base); 
     color: var(--black);
     text-decoration: none;
-    margin-top: 40px;
+    margin: 1rem 0 1rem 0;
     justify-self: center;
+    align-self: center;
     transition: color .2s;
 }
 
