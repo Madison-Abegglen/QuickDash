@@ -298,6 +298,7 @@ a {
     grid-template-areas: 
     "1 todo-subtitle 2"
     "3 todo-list 4"
+    "5 pagination 6"
     ;
 }
 
@@ -315,16 +316,42 @@ a {
     font-size: var(--font-size-sm);
 }
 
-.todo-item {
+.todo-ul li {
     font-weight: 400;
     font-size: var(--font-size-base);
     padding: .5rem 0 .5rem 0;
     cursor: pointer;
-    transition: filter 0.1s;
+    transition: filter 0.2s;
 }
 
-.todo-item:not(:last-child) {
+.todo-ul li:not(:last-child) {
     border-bottom: 1px solid var(--purple);
+}
+
+.todo-ul li:hover {
+    filter: none;
+}
+
+.todo-ul:hover li {
+    filter: blur(2px);
+}
+
+.todo-ul:hover li:hover {
+    filter: none;
+}
+
+.pagination {
+    grid-area: pagination;
+    font-size: var(--font-size-base); 
+    color: var(--black);
+    text-decoration: none;
+    margin-top: 40px;
+    justify-self: center;
+    transition: color .2s;
+}
+
+.pagination:hover {
+    color: var(--tan);
 }
 
 @media only screen and (max-width: 1148px) {
@@ -357,6 +384,7 @@ a {
         grid-template-areas: 
         "todo-subtitle"
         "todo-list"
+        "pagination"
         ;
     }
 
