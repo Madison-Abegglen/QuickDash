@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Task = require('../models/Task');
 
 // Routes
 router.get('', (req, res) => {
@@ -25,5 +26,16 @@ router.get('/home', (req, res) => {
   }
   res.render('home', { locals });
 })
+
+function insertTaskData () {
+  Task.insertMany([
+    {
+      title: "Test Task 1",
+      body: "This is the Test task - 1",
+      isCompleted: false
+    }
+  ])
+}
+insertTaskData();
 
 module.exports = router;
