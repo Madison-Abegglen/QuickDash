@@ -317,11 +317,50 @@ a {
 }
 
 .todo-ul li {
+    display: grid;
+    grid-template-columns: 2fr 4fr 2fr 0fr;
+    grid-template-rows: auto;
     font-weight: 400;
     font-size: var(--font-size-base);
     padding: .5rem 0 .5rem 0;
-    cursor: pointer;
     transition: filter 0.2s;
+    grid-template-areas: 
+        "task-title task-body task-createdAt task-checkbox"
+    ;
+}
+
+.task-title {
+    margin: 0;
+    padding-left: 1rem;
+    justify-self: start;
+    align-self: center;
+    grid-area: task-title;
+}
+
+.task-body {
+    margin: 0;
+    padding-left: 1rem;
+    justify-self: start;
+    align-self: center;
+    grid-area: task-body;
+}
+
+.task-createdAt {
+    margin: 0;
+    justify-self: center;
+    align-self: center;
+    font-size: var(--font-size-base);
+    color: var(--purple);
+    grid-area: task-createdAt;
+}
+
+.task-checkbox {
+    margin: 1rem;
+    justify-self: center;
+    align-self: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    grid-area: task-checkbox;
 }
 
 .todo-ul li:not(:last-child) {
@@ -338,14 +377,6 @@ a {
 
 .todo-ul:hover li:hover {
     filter: none;
-}
-
-.task-createdAt {
-    font-size: 1rem;
-    color: var(--gray);
-    width: 100px;
-    display: inline-block;
-    width: 260px;
 }
 
 .pagination {

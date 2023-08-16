@@ -9,11 +9,11 @@
 
   <% data.forEach(task => { %>
   <ul class="todo-ul">
-    <li>
-        <span><%= task.title %></span>
-        <span><%= task.body %></span>
-        <span class="task-createdAt"><%= task.createdAt %></span>
-        <input type="checkbox" class="task-checkbox" id="isCompleted">
+    <li class="todo-li">
+        <p class="task-title"><%= task.title %></p>
+        <p class="task-body"><%= task.body %></p>
+        <p class="task-createdAt"><%= task.createdAt %></p>
+        <input class="task-checkbox" id="isCompleted" type="checkbox" title="Complete">
     </li>
   </ul>
   <% }) %>
