@@ -1,16 +1,22 @@
 <div class="home-heading">
-    <img src="/images/qd-homegraphic.png" alt="" class="home-graphic">
-    <p class="qotd">"Here there will be the quote of the day..."</p>
-    <p class="qotd-author">- Author</p>
-    <span class="heading-bottom-border"></span>
+  <img src="/images/qd-homegraphic.png" alt="" class="home-graphic" />
+  <p class="qotd">"Here there will be the quote of the day..."</p>
+  <p class="qotd-author">- Author</p>
+  <span class="heading-bottom-border"></span>
 </div>
 <div class="todo-group">
-    <h4><i>My To-Do List</i></h4>
-    <ul class="todo-ul">
-        <li>To-Do Static Placeholder</li>
-        <li>To-Do Static Placeholder</li>
-        <li>To-Do Static Placeholder</li>
-    </ul>
+  <h4><i>Your To-Do List</i></h4>
 
-    <a href="#" class="pagination">&lt; View More Tasks</a>
+  <% data.forEach(task => { %>
+  <ul class="todo-ul">
+    <li>
+        <span><%= task.title %></span>
+        <span><%= task.body %></span>
+        <span class="task-createdAt"><%= task.createdAt %></span>
+        <input type="checkbox" class="task-checkbox" id="isCompleted">
+    </li>
+  </ul>
+  <% }) %>
+
+  <a href="#" class="pagination">&lt; View More Tasks</a>
 </div>

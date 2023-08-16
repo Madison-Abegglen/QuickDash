@@ -39,7 +39,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 select,
-textarea{
+textarea {
     font-family: 'Quicksand', sans-serif;
     font-size: var(--font-size-base);
     display: flex;
@@ -64,8 +64,8 @@ a {
     grid-template-columns: 0fr 0fr;
     grid-template-rows: auto;
     padding-top: 10px;
-    grid-template-areas: 
-    "logo brand"
+    grid-template-areas:
+        "logo brand"
     ;
 }
 
@@ -132,9 +132,9 @@ a {
     align-items: center;
     grid-template-columns: 3fr 1fr 3fr;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "spacer1 socials spacer2"
-    "spacer3 copyright spacer4"
+    grid-template-areas:
+        "spacer1 socials spacer2"
+        "spacer3 copyright spacer4"
     ;
 }
 
@@ -171,10 +171,10 @@ a {
     padding: 0 3rem 0 3rem;
     grid-template-columns: 2fr;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "pretitle"
-    "title"
-    "border"
+    grid-template-areas:
+        "pretitle"
+        "title"
+        "border"
     ;
 }
 
@@ -205,10 +205,10 @@ a {
     margin-top: 1rem;
     grid-template-columns: 3fr;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "subtitle"
-    "subparagraph"
-    "subbutton"
+    grid-template-areas:
+        "subtitle"
+        "subparagraph"
+        "subbutton"
     ;
 }
 
@@ -254,9 +254,9 @@ a {
     grid-template-columns: 1fr 2.5fr 2.5fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-    "1 greeting qotd 2"
-    "3 4 author 5"
-    "6 border border 7"
+        "1 greeting qotd 2"
+        "3 4 author 5"
+        "6 border border 7"
     ;
 }
 
@@ -295,10 +295,10 @@ a {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "1 todo-subtitle 2"
-    "3 todo-list 4"
-    "5 pagination 6"
+    grid-template-areas:
+        "1 todo-subtitle 2"
+        "3 todo-list 4"
+        "5 pagination 6"
     ;
 }
 
@@ -340,9 +340,17 @@ a {
     filter: none;
 }
 
+.task-createdAt {
+    font-size: 1rem;
+    color: var(--gray);
+    width: 100px;
+    display: inline-block;
+    width: 260px;
+}
+
 .pagination {
     grid-area: pagination;
-    font-size: var(--font-size-base); 
+    font-size: var(--font-size-base);
     color: var(--black);
     text-decoration: none;
     margin: 1rem 0 1rem 0;
@@ -358,11 +366,11 @@ a {
 @media only screen and (max-width: 1148px) {
     .home-heading {
         grid-template-columns: 3fr;
-        grid-template-areas: 
-        "greeting"
-        "qotd"
-        "author"
-        "border"
+        grid-template-areas:
+            "greeting"
+            "qotd"
+            "author"
+            "border"
         ;
     }
 
@@ -382,10 +390,10 @@ a {
     .todo-group {
         padding: 0 3rem 0 3rem;
         grid-template-columns: 3fr;
-        grid-template-areas: 
-        "todo-subtitle"
-        "todo-list"
-        "pagination"
+        grid-template-areas:
+            "todo-subtitle"
+            "todo-list"
+            "pagination"
         ;
     }
 
