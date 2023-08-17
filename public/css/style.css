@@ -355,12 +355,36 @@ a {
 }
 
 .task-checkbox {
-    margin: 1rem;
-    justify-self: center;
-    align-self: center;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     width: 2.5rem;
     height: 2.5rem;
+    margin: 1rem;
+    border: 1px solid var(--purple);
+    border-radius: .5rem;
+    background: white;
+    cursor: pointer;
+    justify-self: center;
+    align-self: center;
     grid-area: task-checkbox;
+}
+
+.task-checkbox:checked {
+    background-color: var(--purple-light);
+}
+
+.task-checkbox:checked::before {
+    content: "\2713";
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    font-size: var(--font-size-base);
+    color: black;
+}
+
+.task-checkbox-label {
+    cursor: pointer;
 }
 
 .todo-ul li:not(:last-child) {

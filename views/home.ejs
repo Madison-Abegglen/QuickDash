@@ -12,8 +12,9 @@
     <li class="todo-li">
         <p class="task-title"><%= task.title %></p>
         <p class="task-body"><%= task.body %></p>
-        <p class="task-createdAt"><%= task.createdAt %></p>
+        <p class="task-createdAt"><%= task.createdAt.toDateString() %></p>
         <input class="task-checkbox" id="isCompleted" type="checkbox" title="Complete">
+        <label for="isCompleted" class="task-checkbox-label"></label>
     </li>
   </ul>
   <% }) %>
