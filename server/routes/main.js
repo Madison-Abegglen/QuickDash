@@ -34,11 +34,7 @@ router.get('/home', async (req, res) => {
   } catch (error) {
     console.log(error);
   }
-
-  
 })
-
-
 
 module.exports = router;
 
@@ -46,8 +42,8 @@ module.exports = router;
 // function insertTaskData () {
 //   Task.insertMany([
 //     {
-//       title: "Test Task 1",
-//       body: "This is the Test task - 1",
+//       title: "Test Task 2",
+//       body: "This is the Test task - 2",
 //       isCompleted: false
 //     }
 //   ])

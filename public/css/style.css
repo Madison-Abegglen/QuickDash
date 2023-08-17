@@ -340,6 +340,7 @@ a {
 .task-body {
     margin: 0;
     padding-left: 1rem;
+    border-left: 1px solid var(--purple);
     justify-self: start;
     align-self: center;
     grid-area: task-body;
@@ -347,7 +348,9 @@ a {
 
 .task-createdAt {
     margin: 0;
-    justify-self: center;
+    padding-left: 1rem;
+    border-left: 1px solid var(--purple);
+    justify-self: start;
     align-self: center;
     font-size: var(--font-size-base);
     color: var(--purple);
@@ -355,32 +358,13 @@ a {
 }
 
 .task-checkbox {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     margin: 1rem;
-    border: 1px solid var(--purple);
-    border-radius: .5rem;
-    background: white;
     cursor: pointer;
     justify-self: center;
     align-self: center;
     grid-area: task-checkbox;
-}
-
-.task-checkbox:checked {
-    background-color: var(--purple-light);
-}
-
-.task-checkbox:checked::before {
-    content: "\2713";
-    position: absolute;
-    top: 2px;
-    left: 4px;
-    font-size: var(--font-size-base);
-    color: black;
 }
 
 .task-checkbox-label {

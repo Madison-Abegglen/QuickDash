@@ -7,17 +7,17 @@
 <div class="todo-group">
   <h4><i>Your To-Do List</i></h4>
 
-  <% data.forEach(task => { %>
   <ul class="todo-ul">
+    <% data.forEach(task => { %>
     <li class="todo-li">
         <p class="task-title"><%= task.title %></p>
         <p class="task-body"><%= task.body %></p>
         <p class="task-createdAt"><%= task.createdAt.toDateString() %></p>
-        <input class="task-checkbox" id="isCompleted" type="checkbox" title="Complete">
+        <input type="checkbox" id="isCompleted" class="task-checkbox" />
         <label for="isCompleted" class="task-checkbox-label"></label>
     </li>
+    <% }) %>
   </ul>
-  <% }) %>
 
   <a href="#" class="pagination">&lt; View More Tasks</a>
 </div>
