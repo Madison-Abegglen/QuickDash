@@ -348,9 +348,10 @@ a {
 
 .task-createdAt {
     margin: 0;
-    padding-left: 1rem;
-    border-left: 1px solid var(--purple);
-    justify-self: start;
+    padding-right: 1rem;
+    border-right: 1px solid var(--purple);
+    text-align: end;
+    justify-self: end;
     align-self: center;
     font-size: var(--font-size-base);
     color: var(--purple);
@@ -398,8 +399,27 @@ a {
     transition: color .2s;
 }
 
-.pagination:hover {
-    color: var(--tan);
+@media only screen and (max-width: 770px) {
+    .task-title, .task-body {
+        grid-column: content;
+        grid-row: auto;
+        padding-left: .5rem;
+    }
+
+    .task-createdAt {
+        grid-column: createdAt;
+        grid-row: auto;
+        padding-right: .5rem;
+    }
+
+    .task-checkbox {
+        grid-column: checkbox;
+        grid-row: auto;
+    }
+    
+    .todo-ul li {
+        grid-template-columns: [content] auto [createdAt] auto [checkbox] auto;
+    }
 }
 
 @media only screen and (max-width: 1148px) {
