@@ -165,8 +165,8 @@ a {
     padding: 0 auto;
 }
 
-/* ===== LOGIN ===== */
-.login-title {
+/* ===== WELCOME ===== */
+.welcome-title {
     display: grid;
     padding: 0 3rem 0 3rem;
     grid-template-columns: 2fr;
@@ -184,21 +184,21 @@ a {
     border-bottom: 1px solid var(--purple);
 }
 
-.login-title h1 {
+.welcome-title h1 {
     grid-area: title;
     font-weight: 400;
     font-size: var(--font-size-xl);
     margin: 0 !important;
 }
 
-.login-title h6 {
+.welcome-title h6 {
     grid-area: pretitle;
     font-weight: 400;
     font-size: 18px;
     margin: 2rem 0 1rem 0 !important;
 }
 
-.login-body {
+.welcome-body {
     background-color: white;
     display: grid;
     padding: 3.5rem 3rem 3rem 3rem;
@@ -212,7 +212,7 @@ a {
     ;
 }
 
-.login-body h4 {
+.welcome-body h4 {
     grid-area: subtitle;
     margin: 1rem 0 1rem 0;
     color: var(--purple);
@@ -220,14 +220,39 @@ a {
     font-size: var(--font-size-lg);
 }
 
-.login-body p {
+.welcome-body p {
     grid-area: subparagraph;
     color: var(--purple);
     font-weight: 400;
     font-size: var(--font-size-base);
 }
 
-.btn {
+/* ===== LOGIN ===== */
+.login-form {
+    display: grid;
+    padding: 3rem 3rem 3rem 3rem;
+    justify-self: center;
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "1 loginform 2"
+    ;
+}
+
+.login-form form {
+    grid-area: loginform;
+    border: 1px solid var(--purple);
+    padding: 3rem 1rem 3rem 1rem;
+    background-color: white;
+}
+
+.user-label, .pass-label {
+    margin-left: 12px;
+    font-weight: 400;
+    font-size: var(--font-size-base);
+}
+
+.btn-login {
     grid-area: subbutton;
     width: 122px;
     font-family: 'Quicksand', sans-serif;
@@ -241,13 +266,32 @@ a {
     transition: background-color .4s ease-in-out, color .4s ease-in-out;
 }
 
-.btn:hover {
+.btn-register {
+    grid-area: subbutton;
+    width: 122px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: var(--font-size-base);
+    padding: .5rem 1rem .5rem 1rem;
+    background-color: white;
+    border: 1px solid var(--purple);
+    border-radius: 50px;
+    color: var(--purple);
+    cursor: pointer;
+    transition: background-color .4s ease-in-out, color .4s ease-in-out;
+}
+
+.btn-login:hover, .btn-register:hover {
     background-color: var(--purple-light);
     color: white;
 }
 
-/* ===== HOME ===== */
+.link-register {
+    font-size: var(--font-size-base);
+    color: var(--purple);
+    padding: 0 1rem 0 1rem;
+}
 
+/* ===== HOME ===== */
 .home-heading {
     display: grid;
     padding: 0 3rem 0 3rem;
