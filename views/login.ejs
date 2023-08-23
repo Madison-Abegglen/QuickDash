@@ -1,12 +1,26 @@
 <div class="login-form">
     <form action="/login" method="POST">
-        <label for="username" class="user-label"><b>Username</b></label>
+        <h4 class="form-message">Sign In</h4>
+        <label for="username" class="user-label">Username</label>
         <input type="text" placeholder="Enter Username" name="username">
     
-        <label for="password" class="pass-label"><b>Password</b></label>
+        <label for="password" class="pass-label">Password</label>
         <input type="password" placeholder="Enter Password" name="password">
     
         <input type="submit" value="Login" class="btn-login">
-        <a href="/views/login.ejs" class="link-register">Not a member?</a>
+        <a href="" class="link-register">Not a member?</a>
+    </form>
+</div>
+<div class="register-form">
+    <form action="/register" method="POST">
+        <h4 class="form-message">Register</h4>
+        <label for="username" class="user-label">Username</label>
+        <input type="text" placeholder="Enter Username" name="username">
+    
+        <label for="password" class="pass-label">Password</label>
+        <input type="password" placeholder="Enter Password" name="password">
+    
+        <input type="submit" value="Register" class="btn-register">
+        <a href="" class="link-register">Already a member?</a>
     </form>
 </div>

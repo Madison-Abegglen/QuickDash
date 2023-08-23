@@ -239,17 +239,40 @@ a {
     ;
 }
 
+.register-form {
+    display: grid;
+    padding: 3rem 3rem 3rem 3rem;
+    justify-self: center;
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "1 registerform 2"
+    ;
+}
+
 .login-form form {
     grid-area: loginform;
     border: 1px solid var(--purple);
-    padding: 3rem 1rem 3rem 1rem;
+    padding: 1rem 1rem 3rem 1rem;
     background-color: white;
+}
+
+.register-form form {
+    grid-area: registerform;
+    border: 1px solid var(--purple);
+    padding: 1rem 1rem 3rem 1rem;
+    background-color: white;
+}
+
+.form-message {
+    margin-left: 12px;
+    font-weight: 400;
+    font-size: var(--font-size-sm);
 }
 
 .user-label, .pass-label {
     margin-left: 12px;
-    font-weight: 400;
-    font-size: var(--font-size-base);
+    color: var(--purple);
 }
 
 .btn-login {
@@ -289,6 +312,21 @@ a {
     font-size: var(--font-size-base);
     color: var(--purple);
     padding: 0 1rem 0 1rem;
+}
+
+@media only screen and (max-width: 470px) {
+    .login-form {
+        padding: 3rem 1rem 3rem 1rem;
+    }
+
+    .login-form form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .link-register {
+        padding: 1rem 0 1rem .5rem;
+    }
 }
 
 /* ===== HOME ===== */
