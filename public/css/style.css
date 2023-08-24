@@ -314,6 +314,12 @@ a {
     padding: 0 1rem 0 1rem;
 }
 
+.link-login {
+    font-size: var(--font-size-base);
+    color: var(--purple);
+    padding: 0 1rem 0 1rem;
+}
+
 @media only screen and (max-width: 470px) {
     .login-form {
         padding: 3rem 1rem 3rem 1rem;
@@ -325,6 +331,19 @@ a {
     }
 
     .link-register {
+        padding: 1rem 0 1rem .5rem;
+    }
+
+    .register-form {
+        padding: 3rem 1rem 3rem 1rem;
+    }
+
+    .register-form form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .link-login {
         padding: 1rem 0 1rem .5rem;
     }
 }
