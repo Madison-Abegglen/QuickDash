@@ -18,6 +18,7 @@ app.use(expressLayout);
 app.set('layout', './layouts/main');
 app.set('view engine', 'ejs');
 
+// Routes in Use
 app.use('/', require('./server/routes/main'));
 app.use('/', require('./server/routes/auth'));
 

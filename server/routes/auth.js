@@ -22,8 +22,11 @@ router.get("/login", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const { username, password } = req.body;
-    console.log(req.body);
-    res.redirect('/home');
+    if(req.body.username === username && req.body.password === password){
+      res.send('Admin login successful.');
+    } else {
+      res.send('Wrong username or password');
+    }
   } catch (error) {
     console.log(error);
   }
