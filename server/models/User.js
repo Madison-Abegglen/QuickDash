@@ -15,5 +15,4 @@ const UserSchema = new Schema({
 });
 
 // Create & Export Task Model
-const User = mongoose.model('User', UserSchema);
-module.exports = User;
+module.exports = mongoose.model('User', UserSchema);

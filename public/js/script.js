@@ -1,8 +1,23 @@
 document.addEventListener('DOMContentLoaded', function(){
+    const toLoginForm = document.getElementById('toLoginForm');
     const registerForm = document.getElementById('registerForm');
     const registerToggle = document.getElementById('registerToggle');
     const loginForm = document.getElementById('loginForm');
     const loginToggle = document.getElementById('loginToggle');
+
+    // // Get Login Page from Welcome Page
+    // toLoginForm.addEventListener('click', () => {
+    //     fetch('/login', {
+    //         method: 'GET'
+    //     })
+    //     .then(response => {
+    //         if (response.ok) {
+    //             console.log('Fetching Login Form Page');
+    //         } else {
+    //             throw new Error('Failed to fetch Login Form Page');
+    //         }
+    //     })
+    // });
 
     // Set default display types
     loginForm.style.display = 'grid';

@@ -256,33 +256,53 @@ a {
     grid-template-columns: 1fr 10fr 1fr;
     grid-template-rows: auto;
     grid-template-areas: 
-    "1 loginform 2"
+    "1 loginform-h4 2"
+    "3 loginform 4"
+    "5 loginform-a 6"
     ;
 }
 
 .register-form {
-    display: grid;
+    display: none;
     padding: 3rem 3rem 3rem 3rem;
     justify-self: center;
     grid-template-columns: 1fr 10fr 1fr;
     grid-template-rows: auto;
     grid-template-areas: 
-    "1 registerform 2"
+    "1 registerform-h4 2"
+    "3 registerform 4"
+    "5 registerform-a 6"
     ;
 }
 
 .login-form form {
     grid-area: loginform;
     border: 1px solid var(--purple);
-    padding: 1rem 1rem 3rem 1rem;
+    padding: 1rem 1rem 1rem 1rem;
     background-color: white;
 }
 
 .register-form form {
     grid-area: registerform;
     border: 1px solid var(--purple);
-    padding: 1rem 1rem 3rem 1rem;
+    padding: 1rem 1rem 1rem 1rem;
     background-color: white;
+}
+
+.login-form h4 {
+    grid-area: loginform-h4;
+}
+
+.register-form h4 {
+    grid-area: registerform-h4;
+}
+
+.login-form a {
+    grid-area: loginform-a;
+}
+
+.register-form a {
+    grid-area: registerform-a;
 }
 
 .form-message {
@@ -330,15 +350,23 @@ a {
 }
 
 .link-register {
+    max-width: 120px;
     font-size: var(--font-size-base);
-    color: var(--purple);
-    padding: 0 1rem 0 1rem;
+    color: black;
+    padding: 1rem;
+    transition: color .4s ease-in-out;
 }
 
 .link-login {
+    max-width: 150px;
     font-size: var(--font-size-base);
-    color: var(--purple);
-    padding: 0 1rem 0 1rem;
+    color: black;
+    padding: 1rem;
+    transition: color .4s ease-in-out;
+}
+
+.link-register:hover, .link-login:hover {
+    color: white;
 }
 
 @media only screen and (max-width: 470px) {
