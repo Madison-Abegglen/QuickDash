@@ -86,6 +86,7 @@ router.get("/home", authMiddleware, async (req, res) => {
       description:
         "A versatile dashboard application to provide users with essential information and task management in one place.",
     };
+    // Currently gets all possible Tasks - will need to change later for individual user's tasks
     const data = await Task.find();
     res.render("home", { locals, data });
   } catch (error) {

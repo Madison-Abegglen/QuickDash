@@ -452,10 +452,39 @@ a {
     ;
 }
 
-.todo-group h4 {
+.todo-header {
     grid-area: todo-subtitle;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-header h4 {
     font-weight: 400;
     font-size: var(--font-size-sm);
+}
+
+.todo-header button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin: 1rem 0 1rem 0;
+    font-family: 'Quicksand', sans-serif;
+    font-size: var(--font-size-md);
+    background-color: white;
+    border: 1px solid var(--purple);
+    border-radius: 50px;
+    color: var(--purple);
+    cursor: pointer;
+    transition: background-color .4s ease-in-out, color .4s ease-in-out;
+}
+
+.todo-header button:hover {
+    background-color: var(--purple-light);
+    color: white;
 }
 
 .todo-group ul {
@@ -466,17 +495,34 @@ a {
     font-size: var(--font-size-sm);
 }
 
-.todo-ul li {
+.todo-li {
     display: grid;
-    grid-template-columns: 2fr 4fr 2fr 0fr;
+    grid-template-columns: 2fr 4fr 2fr 0fr 0fr;
     grid-template-rows: auto;
     font-weight: 400;
     font-size: var(--font-size-base);
     padding: .5rem 0 .5rem 0;
     transition: filter 0.2s;
     grid-template-areas: 
-        "task-title task-body task-createdAt task-checkbox"
+        "task-title task-body task-createdAt task-checkbox delete"
     ;
+}
+
+.todo-button {
+    grid-area: delete;
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem 1rem 1rem 0;
+    background-color: transparent;
+    border: none;
+    justify-self: start;
+    align-self: center;
+    cursor: pointer;
+}
+
+.todo-button img {
+    width: 1rem;
+    height: 1rem;
 }
 
 .task-title {

@@ -5,7 +5,10 @@
   <span class="heading-bottom-border"></span>
 </div>
 <div class="todo-group">
-  <h4><i>Your Task List</i></h4>
+  <div class="todo-header">
+    <h4><i>Your Task List</i></h4>
+    <button>+</button>
+  </div>
   <ul class="todo-ul">
     <% data.forEach(task => { %>
     <li class="todo-li">
@@ -14,6 +17,7 @@
         <p class="task-createdAt"><%= task.createdAt.toDateString() %></p>
         <input type="checkbox" id="isCompleted" class="task-checkbox" />
         <label for="isCompleted" class="task-checkbox-label"></label>
+        <button class="todo-button"><img src="/images/delete.png" alt="Remove"></button>
     </li>
     <% }) %>
   </ul>
