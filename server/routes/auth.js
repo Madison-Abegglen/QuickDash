@@ -23,7 +23,7 @@ const authMiddleware = (req, res, next) => {
 }
 
 // Get - Login Page
-router.get("/login", async (req, res) => {
+router.get('/login', async (req, res) => {
   try {
     const locals = {
       title: "QuickDash | Login",
@@ -37,7 +37,7 @@ router.get("/login", async (req, res) => {
 });
 
 // Post - Authorize Login
-router.post("/login", async (req, res) => {
+router.post('/login', async (req, res) => {
   try {
     const { username, password } = req.body;
     // Check Username is Valid
@@ -78,7 +78,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// Get Home Dashboard
+// Get - Home Dashboard Page w Tasks
 router.get("/home", authMiddleware, async (req, res) => {
   try {
     const locals = {
@@ -88,7 +88,22 @@ router.get("/home", authMiddleware, async (req, res) => {
     };
     // Currently gets all possible Tasks - will need to change later for individual user's tasks
     const data = await Task.find();
-    res.render("home", { locals, data });
+    res.render('home', { locals, data });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+// Get - Create New Task Page
+router.get("/add-task", authMiddleware, async (req, res) => {
+  try {
+    const locals = {
+      title: "QuickDash | New Task",
+      description:
+        "A versatile dashboard application to provide users with essential information and task management in one place.",
+    };
+    const data = await Task.find();
+    res.render('add-task');
   } catch (error) {
     console.log(error);
   }

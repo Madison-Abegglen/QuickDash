@@ -465,7 +465,7 @@ a {
     font-size: var(--font-size-sm);
 }
 
-.todo-header button {
+.todo-header a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -482,7 +482,7 @@ a {
     transition: background-color .4s ease-in-out, color .4s ease-in-out;
 }
 
-.todo-header button:hover {
+.todo-header a:hover {
     background-color: var(--purple-light);
     color: white;
 }
@@ -501,7 +501,7 @@ a {
     grid-template-rows: auto;
     font-weight: 400;
     font-size: var(--font-size-base);
-    padding: .5rem 0 .5rem 0;
+    padding: .5rem 0 1.5rem 0;
     transition: filter 0.2s;
     grid-template-areas: 
         "task-title task-body task-createdAt task-checkbox delete"
@@ -595,26 +595,43 @@ a {
     transition: color .2s;
 }
 
+
 @media only screen and (max-width: 770px) {
+    .task-title {
+        align-self: flex-end;
+        padding: .25rem 0 .25rem 0;
+    }
+    
+    .task-body {
+        align-self: flex-start;
+    }
+
     .task-title, .task-body {
         grid-column: content;
         grid-row: auto;
         padding-left: .5rem;
+        border-left: 1px solid var(--purple);
     }
-
+    
     .task-createdAt {
         grid-column: createdAt;
         grid-row: auto;
-        padding-right: .5rem;
+        padding: 0 .5rem 0 0;
     }
-
+    
     .task-checkbox {
         grid-column: checkbox;
+        grid-row: auto;
+        margin: .5rem;
+    }
+    
+    .todo-button {
+        grid-column: delete;
         grid-row: auto;
     }
     
     .todo-ul li {
-        grid-template-columns: [content] auto [createdAt] auto [checkbox] auto;
+        grid-template-columns: [content] auto [createdAt] auto [checkbox] auto [delete] auto;
     }
 }
 
@@ -622,37 +639,93 @@ a {
     .home-heading {
         grid-template-columns: 3fr;
         grid-template-areas:
-            "greeting"
-            "qotd"
-            "author"
-            "border"
+        "greeting"
+        "qotd"
+        "author"
+        "border"
         ;
     }
-
+    
     .home-graphic {
         width: clamp(10rem, 100%, 30rem);
         justify-self: center;
     }
-
+    
     .qotd {
         justify-self: center;
     }
-
+    
     .qotd-author {
         justify-self: center;
     }
-
+    
     .todo-group {
         padding: 0 3rem 0 3rem;
         grid-template-columns: 3fr;
         grid-template-areas:
-            "todo-subtitle"
-            "todo-list"
-            "pagination"
+        "todo-subtitle"
+        "todo-list"
+        "pagination"
         ;
     }
-
+    
     .todo-group h4 {
         justify-self: flex-start;
     }
+}
+
+/* ===== Add Task ===== */
+.addtask-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 40px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: var(--font-size-base);
+    background-color: white;
+    border: 1px solid var(--purple);
+    border-radius: 50px;
+    color: var(--purple);
+    cursor: pointer;
+    transition: background-color .4s ease-in-out, color .4s ease-in-out;
+}
+
+.addtask-btn:hover {
+    color: white;
+    background-color: var(--purple-light);
+}
+
+.addtask-form {
+    display: grid;
+    padding: 3rem 3rem 3rem 3rem;
+    justify-self: center;
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "1 back 2"
+    "3 addtasktitle 4"
+    "5 addtaskform 6"
+    ;
+}
+
+.addtask-form form {
+    grid-area: addtaskform;
+    border: 1px solid var(--purple);
+    padding: 1rem 1rem 1rem 1rem;
+    background-color: white;
+}
+
+.addtask-form h2 {
+    grid-area: addtasktitle;
+}
+
+.addtask-form a {
+    grid-area: back;
+    width: 4rem;
+    transition: color .4s ease-in-out;
+}
+
+.addtask-form a:hover {
+    color: white;
 }
