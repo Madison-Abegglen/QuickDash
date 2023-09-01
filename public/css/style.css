@@ -509,22 +509,22 @@ a {
 
 .todo-li {
     display: grid;
-    grid-template-columns: 2fr 4fr 2fr 0fr 0fr;
+    grid-template-columns: 2fr 4fr 2fr 0fr 0fr 0fr;
     grid-template-rows: auto;
     font-weight: 400;
     font-size: var(--font-size-base);
     padding: .5rem 0 1.5rem 0;
     transition: filter 0.2s;
     grid-template-areas: 
-        "task-title task-body task-createdAt task-checkbox delete"
+        "task-title task-body task-createdAt edit delete task-checkbox"
     ;
 }
 
-.todo-button {
+.todo-delete {
     grid-area: delete;
     width: 2rem;
     height: 2rem;
-    margin: 1rem 1rem 1rem 0;
+    margin: 0 .5rem 0 .5rem;
     background-color: transparent;
     border: none;
     justify-self: start;
@@ -532,7 +532,24 @@ a {
     cursor: pointer;
 }
 
-.todo-button img {
+.todo-delete img {
+    width: 1rem;
+    height: 1rem;
+}
+
+.todo-edit {
+    grid-area: edit;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 0 0 .5rem;
+    background-color: transparent;
+    border: none;
+    justify-self: start;
+    align-self: center;
+    cursor: pointer;
+}
+
+.todo-edit img {
     width: 1rem;
     height: 1rem;
 }
@@ -569,7 +586,7 @@ a {
 .task-checkbox {
     width: 2rem;
     height: 2rem;
-    margin: 1rem;
+    margin: 0 .5rem 0 .5rem;
     cursor: pointer;
     justify-self: center;
     align-self: center;
@@ -610,40 +627,53 @@ a {
 
 @media only screen and (max-width: 770px) {
     .task-title {
+        grid-area: contenttitle;
         align-self: flex-end;
         padding: .25rem 0 .25rem 0;
     }
     
     .task-body {
+        grid-area: contentbody;
         align-self: flex-start;
     }
 
     .task-title, .task-body {
-        grid-column: content;
-        grid-row: auto;
         padding-left: .5rem;
         border-left: 1px solid var(--purple);
     }
     
     .task-createdAt {
-        grid-column: createdAt;
-        grid-row: auto;
-        padding: 0 .5rem 0 0;
+        grid-area: createdAt;
+        border-right: none;
+        border-left: 1px solid var(--purple);
+        padding: .5rem;
+        justify-self: flex-start;
     }
     
     .task-checkbox {
-        grid-column: checkbox;
-        grid-row: auto;
-        margin: .5rem;
+        grid-area: checkbox;
     }
     
-    .todo-button {
-        grid-column: delete;
-        grid-row: auto;
+    .todo-delete {
+        grid-area: delete;
+        margin: 0;
+        padding: .5rem;
+    }
+
+    .todo-edit {
+        grid-area: edit;
+        margin: 0;
+        padding: .5rem;
     }
     
     .todo-ul li {
-        grid-template-columns: [content] auto [createdAt] auto [checkbox] auto [delete] auto;
+        padding: .5rem 0 .5rem 0;
+        grid-template-columns: 10fr 0fr 0fr 0fr 0fr;
+        grid-template-areas: 
+        "contenttitle contenttitle contenttitle contenttitle contenttitle"
+        "contentbody contentbody contentbody contentbody contentbody"
+        "createdAt 1 edit delete checkbox"
+        ;
     }
 }
 
@@ -677,7 +707,6 @@ a {
         grid-template-areas:
         "todo-subtitle"
         "todo-list"
-        "pagination"
         ;
     }
     

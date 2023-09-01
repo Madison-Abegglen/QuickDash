@@ -15,9 +15,10 @@
         <p class="task-title"><%= task.title %></p>
         <p class="task-body"><%= task.body %></p>
         <p class="task-createdAt"><%= task.createdAt.toDateString() %></p>
+        <button class="todo-edit"><img src="/images/edit.png" alt="Edit"></button>
+        <button class="todo-delete"><img src="/images/delete.png" alt="Remove"></button>
         <input type="checkbox" id="isCompleted" class="task-checkbox" />
         <label for="isCompleted" class="task-checkbox-label"></label>
-        <button class="todo-button"><img src="/images/delete.png" alt="Remove"></button>
     </li>
     <% }) %>
   </ul>

@@ -109,4 +109,18 @@ router.get("/add-task", authMiddleware, async (req, res) => {
   }
 });
 
+// Post - Create New Task
+router.post('/add-task', authMiddleware, async (req, res) => {
+  try {
+    const newTask = new Task({
+      title: req.body.title,
+      body: req.body.body
+    });
+    await Task.create(newTask);
+    res.redirect('/home');
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = router;
