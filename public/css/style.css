@@ -509,36 +509,22 @@ a {
 
 .todo-li {
     display: grid;
-    grid-template-columns: 2fr 4fr 2fr 0fr 0fr 0fr;
+    grid-template-columns: 1fr 4fr 2fr 0fr 0fr;
     grid-template-rows: auto;
     font-weight: 400;
     font-size: var(--font-size-base);
     padding: .5rem 0 1.5rem 0;
     transition: filter 0.2s;
     grid-template-areas: 
-        "task-title task-body task-createdAt edit delete task-checkbox"
+        "task-title task-body task-createdAt edit task-checkbox"
     ;
-}
-
-.todo-delete {
-    grid-area: delete;
-    width: 2rem;
-    height: 2rem;
-    margin: 0 .5rem 0 .5rem;
-    background-color: transparent;
-    border: none;
-    justify-self: start;
-    align-self: center;
-    cursor: pointer;
-}
-
-.todo-delete img {
-    width: 1rem;
-    height: 1rem;
 }
 
 .todo-edit {
     grid-area: edit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 2rem;
     height: 2rem;
     margin: 0 0 0 .5rem;
@@ -653,12 +639,6 @@ a {
     .task-checkbox {
         grid-area: checkbox;
     }
-    
-    .todo-delete {
-        grid-area: delete;
-        margin: 0;
-        padding: .5rem;
-    }
 
     .todo-edit {
         grid-area: edit;
@@ -668,11 +648,11 @@ a {
     
     .todo-ul li {
         padding: .5rem 0 .5rem 0;
-        grid-template-columns: 10fr 0fr 0fr 0fr 0fr;
+        grid-template-columns: 10fr 0fr 0fr 0fr;
         grid-template-areas: 
-        "contenttitle contenttitle contenttitle contenttitle contenttitle"
-        "contentbody contentbody contentbody contentbody contentbody"
-        "createdAt 1 edit delete checkbox"
+        "contenttitle contenttitle contenttitle contenttitle"
+        "contentbody contentbody contentbody contentbody"
+        "createdAt 1 edit checkbox"
         ;
     }
 }
@@ -775,4 +755,22 @@ a {
     .addtask-form {
         padding: 2rem 0 2rem 0;
     }
+}
+
+/* ===== Edit & Delete Task ===== */
+.todo-delete {
+    grid-area: delete;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 .5rem 0 .5rem;
+    background-color: transparent;
+    border: none;
+    justify-self: start;
+    align-self: center;
+    cursor: pointer;
+}
+
+.todo-delete img {
+    width: 1rem;
+    height: 1rem;
 }

@@ -123,4 +123,35 @@ router.post('/add-task', authMiddleware, async (req, res) => {
   }
 });
 
+// GET - Get Edit Task Page
+router.get('/edit-task/:id', authMiddleware, async (req, res) => {
+  try {
+    const locals = {
+      title: "QuickDash | Edit Task",
+      description:
+        "A versatile dashboard application to provide users with essential information and task management in one place.",
+    };
+    const data = await Task.findOne({ _id: req.params.id });
+    res.render('edit-task', {
+      locals,
+      data
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+// PUT - Edit Task
+router.put('/edit-task/:id', authMiddleware, async (req, res) => {
+  try {
+    await Task.findByIdAndUpdate(req.params.id, {
+      title: req.body.title,
+      body: req.body.body
+    });
+    res.redirect('/edit-task/${req.params.id}');
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = router;
