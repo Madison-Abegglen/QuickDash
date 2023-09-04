@@ -65,7 +65,7 @@ a {
     grid-template-columns: 0fr 0fr;
     grid-template-rows: auto;
     padding-top: 10px;
-    padding-bottom: 10px; 
+    padding-bottom: 10px;
     grid-template-areas:
         "logo brand"
     ;
@@ -256,10 +256,10 @@ a {
     justify-self: center;
     grid-template-columns: 1fr 10fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "1 loginform-h4 2"
-    "3 loginform 4"
-    "5 loginform-a 6"
+    grid-template-areas:
+        "1 loginform-h4 2"
+        "3 loginform 4"
+        "5 loginform-a 6"
     ;
 }
 
@@ -269,10 +269,10 @@ a {
     justify-self: center;
     grid-template-columns: 1fr 10fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "1 registerform-h4 2"
-    "3 registerform 4"
-    "5 registerform-a 6"
+    grid-template-areas:
+        "1 registerform-h4 2"
+        "3 registerform 4"
+        "5 registerform-a 6"
     ;
 }
 
@@ -312,7 +312,8 @@ a {
     font-size: var(--font-size-sm);
 }
 
-.user-label, .pass-label {
+.user-label,
+.pass-label {
     margin-left: 12px;
     color: var(--purple);
 }
@@ -357,7 +358,9 @@ a {
     transition: background-color .4s ease-in-out, color .4s ease-in-out;
 }
 
-.btn-login:hover, .btn-register:hover, .tologin:hover {
+.btn-login:hover,
+.btn-register:hover,
+.tologin:hover {
     background-color: var(--purple-light);
     color: white;
 }
@@ -378,7 +381,8 @@ a {
     transition: color .4s ease-in-out;
 }
 
-.link-register:hover, .link-login:hover {
+.link-register:hover,
+.link-login:hover {
     color: white;
 }
 
@@ -516,7 +520,7 @@ a {
     font-size: var(--font-size-base);
     padding: .5rem 0 1.5rem 0;
     transition: filter 0.2s;
-    grid-template-areas: 
+    grid-template-areas:
         "task-title task-body task-createdAt edit task-checkbox"
     ;
 }
@@ -618,17 +622,18 @@ a {
         align-self: flex-end;
         padding: .25rem 0 .25rem 0;
     }
-    
+
     .task-body {
         grid-area: contentbody;
         align-self: flex-start;
     }
 
-    .task-title, .task-body {
+    .task-title,
+    .task-body {
         padding-left: .5rem;
         border-left: 1px solid var(--purple);
     }
-    
+
     .task-createdAt {
         grid-area: createdAt;
         border-right: none;
@@ -636,7 +641,7 @@ a {
         padding: .5rem;
         justify-self: flex-start;
     }
-    
+
     .task-checkbox {
         grid-area: checkbox;
     }
@@ -646,14 +651,14 @@ a {
         margin: 0;
         padding: .5rem;
     }
-    
+
     .todo-ul li {
         padding: .5rem 0 .5rem 0;
         grid-template-columns: 10fr 0fr 0fr 0fr;
-        grid-template-areas: 
-        "contenttitle contenttitle contenttitle contenttitle"
-        "contentbody contentbody contentbody contentbody"
-        "createdAt 1 edit checkbox"
+        grid-template-areas:
+            "contenttitle contenttitle contenttitle contenttitle"
+            "contentbody contentbody contentbody contentbody"
+            "createdAt 1 edit checkbox"
         ;
     }
 }
@@ -662,35 +667,35 @@ a {
     .home-heading {
         grid-template-columns: 3fr;
         grid-template-areas:
-        "greeting"
-        "qotd"
-        "author"
-        "border"
+            "greeting"
+            "qotd"
+            "author"
+            "border"
         ;
     }
-    
+
     .home-graphic {
         width: clamp(10rem, 100%, 30rem);
         justify-self: center;
     }
-    
+
     .qotd {
         justify-self: center;
     }
-    
+
     .qotd-author {
         justify-self: center;
     }
-    
+
     .todo-group {
         padding: 0 3rem 0 3rem;
         grid-template-columns: 3fr;
         grid-template-areas:
-        "todo-subtitle"
-        "todo-list"
+            "todo-subtitle"
+            "todo-list"
         ;
     }
-    
+
     .todo-group h4 {
         justify-self: flex-start;
     }
@@ -725,9 +730,9 @@ a {
     grid-template-columns: 2fr 8fr 2fr;
     grid-template-rows: auto;
     grid-template-areas:
-    "1 back 2"
-    "3 addtasktitle 4"
-    "5 addtaskform 6"
+        "1 back 2"
+        "3 addtasktitle 4"
+        "5 addtaskform 6"
     ;
 }
 
@@ -759,24 +764,44 @@ a {
 }
 
 /* ===== Edit & Delete Task ===== */
-.updatetask-form {
+.updatetask-page {
+    padding: 3rem 0 3rem 0;
     display: grid;
     grid-template-columns: 2fr 8fr 2fr;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "1 back 2"
-    "3 delete 4"
-    "5 edit 6"
+    grid-template-areas:
+        "1 back 2"
+        "3 updatetask-header 4"
+        "5 updatetask-form 6"
     ;
 }
 
-.updatetask-form a {
+.updatetask-page a {
     grid-area: back;
     margin: 1rem 0 0 0;
+    width: 4rem;
+    transition: color .4s ease-in-out;
 }
 
+.updatetask-page a:hover {
+    color: white;
+}
+
+.updatetask-header {
+    grid-area: updatetask-header;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.updatetask-header h2 {
+    margin: 1rem 0 1rem 0;
+}
+
+.updatetask-header h2,
 .delete-task {
-    grid-area: delete;
+    grid-area: updatetask-header;
 }
 
 .deletetask-btn {
@@ -799,6 +824,27 @@ a {
     color: white;
 }
 
-.edit-task {
-    grid-area: edit;
+.updatetask-form {
+    grid-area: updatetask-form;
+    border: 1px solid var(--purple);
+    padding: 1rem 1rem 1rem 1rem;
+    background-color: white;
+}
+
+.updatetask-btn {
+    width: 80px;
+    height: 40px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: var(--font-size-base);
+    background-color: white;
+    border: 1px solid var(--purple);
+    border-radius: 50px;
+    color: var(--purple);
+    cursor: pointer;
+    transition: background-color .4s ease-in-out, color .4s ease-in-out;
+}
+
+.updatetask-btn:hover {
+    background-color: var(--purple-light);
+    color: white;
 }

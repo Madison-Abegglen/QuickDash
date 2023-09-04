@@ -148,7 +148,7 @@ router.put('/edit-task/:id', authMiddleware, async (req, res) => {
       title: req.body.title,
       body: req.body.body
     });
-    res.redirect('/edit-task/${req.params.id}');
+    res.redirect(`/edit-task/${req.params.id}`);
   } catch (error) {
     console.log(error);
   }
