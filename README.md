@@ -6,9 +6,9 @@ A versatile dashboard application to provide users with essential information an
 Efficiently manage your tasks and stay organized with the interactive to-do list module
 
 ### Second Iteration
-**Weather Widget** ||
-Stay informed about current weather conditions and forecasts for any location with the dynamic weather widget
-
-### Third Iteration
 **Quote of the Day** ||
 Get inspired daily with uplifting and thought-provoking quotes displayed on the inspiring quote widget
+
+### Third Iteration
+**Weather Widget** ||
+Stay informed about current weather conditions and forecasts for any location with the dynamic weather widget
