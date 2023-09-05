@@ -154,4 +154,14 @@ router.put('/edit-task/:id', authMiddleware, async (req, res) => {
   }
 });
 
+// POST - Delete Task
+router.delete('/delete-task/:id', authMiddleware, async (req, res) => {
+  try {
+    await Task.deleteOne({ _id: req.params.id });
+    res.redirect('/home');
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = router;

@@ -15,11 +15,21 @@
       <p class="task-title"><%= task.title %></p>
       <p class="task-body"><%= task.body %></p>
       <p class="task-createdAt"><%= task.createdAt.toDateString() %></p>
-      <a href="/edit-task/<%= task._id %>" class="todo-edit">
-        <img src="/images/edit.png" alt="Edit"/>
-      </a>
-      <input type="checkbox" id="isCompleted" class="task-checkbox" />
-      <label for="isCompleted" class="task-checkbox-label"></label>
+      <div class="task-functions">
+        <a href="/edit-task/<%= task._id %>" class="todo-edit">
+          <img src="/images/edit.png" alt="Edit" />
+        </a>
+        <form
+          action="/delete-task/<%= task._id %>?_method=DELETE"
+          method="POST"
+          class="deletetask-form"
+        >
+          <input type="submit" value="" class="deletetask-btn-min" />
+        </form>
+        <form action="" class="task-checkbox-form">
+          <input type="checkbox" value="Complete" class="task-checkbox" />
+        </form>
+      </div>
     </li>
     <% }) %>
   </ul>
