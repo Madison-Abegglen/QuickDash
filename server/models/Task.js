@@ -17,6 +17,10 @@ const TaskSchema = new Schema({
     },
     isCompleted: {
         type: Boolean
+    },
+    createdBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true
     }
 });
 

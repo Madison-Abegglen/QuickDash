@@ -7,11 +7,29 @@ const jwt = require('jsonwebtoken');
 const loginLayout = "../views/layouts/login";
 const jwtSecret = process.env.JWT_SECRET;
 
+// Get Welcome Page
+router.get('', async (req, res) => {
+  res.redirect('/welcome');
+});
+
+router.get('/welcome', async (req, res) => {
+  try {
+    const locals = {
+      title: "QuickDash",
+      description:
+        "A versatile dashboard application to provide users with essential information and task management in one place.",
+    };
+    res.render('welcome', { locals, layout: loginLayout });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 // Verify User is Logged In
 const authMiddleware = (req, res, next) => {
   const token = req.cookies.token;
   if(!token) {
-    return res.status(401).json({ message: 'Unauthorized'});
+    res.redirect('/welcome');
   }
   try {
     const decoded = jwt.verify(token, jwtSecret);
@@ -78,7 +96,13 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// Get - Home Dashboard Page w Tasks
+// GET - Logout User
+router.get('/logout', (req, res) => {
+  res.clearCookie('token');
+  res.redirect('/welcome');
+});
+
+// GET - Home Dashboard Page w Tasks
 router.get("/home", authMiddleware, async (req, res) => {
   try {
     const locals = {

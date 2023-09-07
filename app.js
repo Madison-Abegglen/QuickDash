@@ -41,7 +41,6 @@ app.set('view engine', 'ejs');
   // app.locals.isActiveRoute = isActiveRoute; 
 
 // Routes in Use
-app.use('/', require('./server/routes/main'));
 app.use('/', require('./server/routes/auth'));
 
 // Start the server
