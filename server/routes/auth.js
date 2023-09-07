@@ -61,12 +61,14 @@ router.post('/login', async (req, res) => {
     // Check Username is Valid
     const user = await User.findOne({ username });
     if (!user) {
-      return res.status(401).json({ message: 'Invalid Credentials' });
+      req.session.loginError = 'Invalid Credentials';
+      return res.redirect('/login');
     }
     // Check Password is Valid
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-      return res.status(401).json({ message: 'Invalid Credentials' });
+      req.session.loginError = 'Invalid Credentials';
+      return res.redirect('/login');
     }
     // Get token, assign Cookie, redirect to Home Page
     const token = jwt.sign({ userId: user._id }, jwtSecret );
@@ -138,7 +140,8 @@ router.post('/add-task', authMiddleware, async (req, res) => {
   try {
     const newTask = new Task({
       title: req.body.title,
-      body: req.body.body
+      body: req.body.body,
+      createdBy: req.userId
     });
     await Task.create(newTask);
     res.redirect('/home');

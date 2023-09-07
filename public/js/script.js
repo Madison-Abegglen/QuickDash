@@ -1,25 +1,31 @@
 document.addEventListener('DOMContentLoaded', function(){
-    const toLoginForm = document.getElementById('toLoginForm');
     const registerForm = document.getElementById('registerForm');
     const registerToggle = document.getElementById('registerToggle');
     const loginForm = document.getElementById('loginForm');
     const loginToggle = document.getElementById('loginToggle');
 
-    // // Get Login Page from Welcome Page
-    // toLoginForm.addEventListener('click', () => {
-    //     fetch('/login', {
-    //         method: 'GET'
-    //     })
-    //     .then(response => {
-    //         if (response.ok) {
-    //             console.log('Fetching Login Form Page');
-    //         } else {
-    //             throw new Error('Failed to fetch Login Form Page');
-    //         }
-    //     })
-    // });
+    // Retrieve & display error messages from session storage
+    const loginError = document.getElementById('loginError');
+    const registerError = document.getElementById('registerError');
+    
+    const sessionLoginError = sessionStorage.getItem('loginError');
+    if (sessionLoginError) {
+        showError(sessionLoginError, loginError);
+        sessionStorage.removeItem('loginError'); // Clear error from session
+    }
 
-    // Set default display types
+    const sessionRegisterError = sessionStorage.getItem('registerError');
+    if (sessionRegisterError) {
+        showError(sessionRegisterError, registerError); 
+        sessionStorage.removeItem('registerError'); // Clear error from session
+    }
+
+    function showError(message, errorElement) {
+        errorElement.textContent = message;
+        errorElement.style.display = 'flex';
+    }
+
+    // Set default display for forms
     loginForm.style.display = 'grid';
     registerForm.style.display = 'none';
 
@@ -29,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function(){
         loginForm.style.display = 'none';
         registerForm.style.display = 'grid';
     });
-
     loginToggle.addEventListener('click', () => {
         event.preventDefault();
         loginForm.style.display = 'grid';
